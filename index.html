@@ -17,52 +17,68 @@
     <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png" />
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bootsnav.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
 
     <style>
-        /* General Styles */
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2980b9;
+            --accent-color: #27ae60;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles (Mobile First) */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
+            background-color: #f5f7fa;
+            font-size: 16px;
         }
 
-        .center {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 15px;
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 0;
         }
 
-        .my-paragraph {
-            font-size: 16px; /* Reduced size for better readability */
+        h2 {
+            font-size: 1.8rem;
         }
 
-        .coloring {
-            color: green;
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
         /* Header Styles */
         .top-area {
-            background: #f8f8f8;
-            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Section Styles */
-        .about,
-        .education {
-            padding: 50px 20px; /* Responsive padding */
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        /* Main Content Areas */
+        section {
+            padding: 40px 0;
         }
 
         .section-heading {
@@ -70,68 +86,197 @@
             text-align: center;
         }
 
-        /* Image Styles */
-        .profile-image {
-            max-width: 100%;
-            height: auto; /* Make image responsive */
+        .section-heading h2 {
+            display: inline-block;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .section-heading h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Student Info Card */
+        .student-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .student-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .student-icon {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Results Section */
+        .results-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .result-card {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+            background-color: #f8fafc;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .task-card {
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            background-color: #f8fafc;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .coloring {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Project Details */
+        .project-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .total-cost {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 15px;
+            text-align: right;
+        }
+
+        .note-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        /* Supervisor Section */
+        .supervisor-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Results Section Styles */
-        .results-container {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px 0; /* Space between sections */
+        .supervisor-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 20px;
+            display: block;
         }
 
-        .result-info,
-        .task-info {
-            margin: 15px 0;
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            margin-top: 50px;
         }
 
-        .result-info h3,
-        .task-info h3 {
-            font-size: 18px; /* Keep consistent font size for headings */
-            color: #336699;
-            margin-bottom: 10px;
-        }
-
-        /* Footer Styles */
-        #footer-copyright {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        /* Responsive Font Sizes */
-        @media (max-width: 768px) {
+        /* Responsive Adjustments */
+        @media (min-width: 576px) {
+            .student-card,
+            .project-card,
+            .results-container {
+                padding: 30px;
+            }
+            
             h2 {
-                font-size: 20px; /* Reduced font size for mobile */
+                font-size: 2rem;
             }
-
+            
             h3 {
-                font-size: 16px; /* Reduced font size for mobile */
+                font-size: 1.5rem;
             }
+        }
 
-            .result-info h3,
-            .task-info h3 {
-                font-size: 16px; /* Reduced font size for mobile */
+        @media (min-width: 768px) {
+            section {
+                padding: 60px 0;
             }
-
-            .lecturer-name {
-                font-size: 18px; /* Reduced font size for lecturer's name */
+            
+            .results-container {
+                display: flex;
+                flex-wrap: wrap;
             }
-
-            .lecturer-title {
-                font-size: 14px; /* Reduced font size for lecturer's title */
+            
+            .result-card,
+            .task-card {
+                flex: 0 0 calc(50% - 15px);
+                margin-right: 15px;
             }
+            
+            .task-card {
+                margin-right: 0;
+                margin-left: 15px;
+            }
+            
+            .supervisor-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
 
-            .lecturer-image {
-                width: 80%; /* Make image smaller on mobile */
-                height: auto; /* Maintain aspect ratio */
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .student-card,
+            .project-card {
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
             }
         }
     </style>
@@ -139,139 +284,150 @@
 
 <body>
     <header class="top-area">
-        <div class="header-area">
-            <!-- Start Navigation -->
-            <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
-                <div class="container">
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <a href="#">
-                            <img src="assets/images/jooust1.png" alt="JOOUST Logo" style="max-width: 80%; height: auto;"> <!-- Responsive logo -->
-                        </a>
-                    </div>
-                    <!-- End Header Navigation -->
-                </div>
-                <!--/.container -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/jooust1.png" alt="JOOUST Logo">
+                </a>
             </nav>
-            <!-- /nav -->
-            <!-- End Navigation -->
         </div>
-        <!--/.header-area -->
-        <div class="clearfix"></div>
     </header>
-    <!-- /.top-area -->
 
-    <!-- About Start -->
-    <section id="about" class="about">
+    <!-- Student Information -->
+    <section id="about">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="center">
-                        <br>                        
+            <div class="student-card">
+                <div class="student-header">
+                    <div class="student-icon">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <br>
-                    <h2><b>MARK NGUGI CHEGE</b></h2>
-                    <br>
-                    <h2><b>I132/G/1614/21</b></h2>
-                    <br>
-                    <h2><b>4<sup>TH</sup> YEAR 1<sup>ST</sup> SEMESTER</b></h2>
-                    <br>
+                    <h2>MARK NGUGI CHEGE</h2>
+                    <h3>I132/G/1614/21</h3>
+                    <h3>4<sup>TH</sup> YEAR 2<sup>ND</sup> SEMESTER</h3>
+                </div>
 
-                    <div class="results-container">
-                        <div class="row">
-                            <hr style="border: 1px solid black;">
-                            <div class="col-sm-4">
-                                <div class="result-info">
-                                    <h3 style="text-align: center;"><b>INDUSTRIAL ATTACHMENT RESULTS</b></h3>
-                                    <h3 style="color: #050505;"><b>Total Marks: </b><span class="coloring">100</span></h3>
-                                    <h3 style="color: #050505;"><b>Achieved Marks: </b><span class="coloring">82 (A)</span></h3>
-                                    <h3 style="color: #050505;"><b>Status: </b><span class="coloring">Excellent</span></h3>
-                                </div>
-                            </div>
+                <div class="results-container">
+                    <div class="result-card">
+                        <h3 class="text-center"><b>CAPSTONE PROJECT PROGRESS</b></h3>
+                        <p><b>Phase 1 Presentation: </b><span class="coloring">Completed (15/01/2025)</span></p>
+                        <p><b>Phase 2 Presentation: </b><span class="coloring">Completed (3/02/2025)</span></p>
+                        <p><b>Phase 3 Presentation: </b><span class="coloring">Scheduled (05/05/2025)</span></p>
+                        <p><b>Current Status: </b><span class="coloring">On Track</span></p>
+                        <div class="mt-3 note-box">
+                            <p><i class="fas fa-exclamation-circle"></i> <b>IMPORTANT:</b> Ensure your project is fully tested and functional before the Phase 3 presentation. Schedule meetings with your supervisor if you need any assistance or guidance.</p>
+                        </div>
+                    </div>
 
-                            <hr style="border: 1px solid black;">
-                            <div class="col-sm-4">
-                                <div class="task-info">
-                                    <h3>Tasks to Complete Before 25th October 2024</h3>
-                                    <ul style="font-size: 16px; color: #050505;">
-                                        <li>1. Print your 26-page report twice (52pages): submit one copy (26-page) to SIIS schools and keep the other 26-page copy.</li><br>
-                                        <li>2. Make sure your logbook is submitted.</li><br>
-                                        <li>3. Submit your recommendation letter.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <hr style="border: 1px solid black;">
+                    <div class="task-card">
+                        <h4 class="text-center mt-4">Before 5<sup>th</sup> May 2025</h4>
+                        <ul class="pl-3">
+                            <li>Complete all project development</li>
+                            <li>Thoroughly test all project features</li>
+                            <li>Prepare presentation materials</li>
+                            <li>Rehearse your presentation</li>
+                            <li>Meet with supervisor for final review</li>
+                        </ul>
+                        <div class="mt-3 note-box">
+                            <p><i class="fas fa-lightbulb"></i> <b>TIP:</b> Regular communication with your supervisor can help identify and resolve issues early, ensuring you don't lose marks for preventable problems.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- /.about -->
 
-    <!-- Lecturer Information -->
-
-
-    <!-- Education Start -->
-    <section id="education" class="education">
-        <div class="section-heading text-center">
-            <h2 style="margin-bottom: 10px;">CAPSTONE PROJECT RESEARCH</h2>
+<!-- Project Information -->
+<section id="education">
+    <div class="container">
+        <div class="section-heading">
+            <h2>CAPSTONE PROJECT RESEARCH</h2>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="single-horizontal-timeline">
-                        <div class="timeline">
-                            <div class="timeline-content">
-                                <h2 style="font-size: 22px; color: #336699; margin-top: 10px;">Your Project Title:</h2>
-                                <p style="font-size: 18px; color: black;">Log Monitoring And Analysis</p>
-                                <br>
-                                <h2 style="font-size: 20px; color: #336699;">Specifications:</h2>
-                                <br>
-                                <p style="font-size: 16px; color: black;"><b>Hosting</b> - Ksh.3000 (3 Months) on Hostinger</p>
-                                <p style="font-size: 16px; color: black;"><b>Database</b> - Ksh.1600 (3 Months) on Digital Ocean</a></p>
-                                <p style="font-size: 16px; color: black;"><b>Frontend:</b> Ksh 1500</p>
-								<p style="font-size: 16px; color: black;"><b>Backend:</b> Ksh.2000</p> <br>
-
-								<p style="font-size: 16px; color: black;"><b>Total Project Cost:</b> Ksh 8100</p> <br>
-
-
-
-                                
-								<p style="font-size: 16px; color: darkred;">NOTE: ALL PAYMENTS ARE TO BE MADE IN CASH AT THE SIIS DEPARTMENT'S OFFICE FOR RECORDING PURPOSES BEFORE 7<sup>th</sup> November 2024<p></p>
-                            </div>
-                        </div>
-                    </div>
+        
+        <div class="project-card">
+            <h3 class="text-center">Your Project Title:</h3>
+            <h2 class="text-center coloring">Log Monitoring And Analysis</h2>
+            
+            <div class="mt-4">
+                <h4>Specifications:</h4>
+                
+                <div class="cost-item">
+                    <span><b>Hosting</b> - 4 Months on Hostinger (Extended for project duration)</span>
+                    <span>Ksh.3500</span>
                 </div>
-                <!-- Add additional columns for other projects as needed -->
+                
+                <div class="cost-item">
+                    <span><b>Database</b> - 5 Months on Digital Ocean (Extended storage)</span>
+                    <span>Ksh.2500</span>
+                </div>
+                
+                <div class="cost-item">
+                    <span><b>Frontend Development</b> (Additional UI components)</span>
+                    <span>Ksh.1500</span>
+                </div>
+                
+                <div class="cost-item">
+                    <span><b>Backend Development</b> (Enhanced API services)</span>
+                    <span>Ksh.2500</span>
+                </div>
+                
+                <div class="cost-item">
+                    <span><b>Domain Registration</b> (2 Months)</span>
+                    <span>Ksh.1200</span>
+                </div>
+                
+                <div class="cost-item">
+                    <span><b>SSL Certificate</b> (6 Months)</span>
+                    <span>Ksh.500</span>
+                </div>
+                
+                <div class="total-cost">
+                    <span>Total Project Cost:</span>
+                    <span>Ksh.11,700</span>
+                </div>
+                
+            <div class="note-box">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>NOTE:</b> 
+                    ALL PAYMENTS ARE TO BE MADE IN CASH AT THE SIIS DEPARTMENT'S OFFICE FOR RECORDING PURPOSES BEFORE 5<sup>TH</sup> MAY 2025. 
+                    <br><br>
+                    <i class="fas fa-id-card"></i> <b>REMEMBER:</b> When making payments, you must bring your student ID card for verification processing.
+                </p>
+            </div>
             </div>
         </div>
-    </section>
-    <!-- /.education -->
+    </div>
+</section>
 
-	<div class="section-heading text-center">
-		<h2 style="margin-bottom: 10px;">Supervisor</h2>
-	</div>
-
-	<section class="lecturer-info text-center">
-        <img src="assets/images/nm.jpeg" alt="Dr. Newton Masinde" class="lecturer-image" style="width: 100px; height: auto; border-radius: 50%; align-items: center;">
-        <p class="lecturer-name">Dr. Newton Masinde</p>
-        <p class="lecturer-title">Title: Senior Lecturer</p>
-        <p class="lecturer-education">
-            Coordinator, Enterprise Resource Planning (ERP) - Directorate of ICT - Department of ICT<br>
-            <b>PhD in Computer Science EQF level 8, Heinrich Heine Universität (Germany)</b><br>
-            <b>MTech. in Computer Science and Engineering EQF level 7, University College of Engineering, Osmania University (India)</b><br>
-            <b>BSc. in Electronic and Computer Engineering EQF level 6</b>
-        </p>
+    <!-- Supervisor Information -->
+    <section id="supervisor">
+        <div class="container">
+            <div class="section-heading">
+                <h2>SUPERVISOR</h2>
+            </div>
+            
+            <div class="supervisor-card text-center">
+                <img src="assets/images/nm.jpeg" alt="Dr. Newton Masinde" class="supervisor-img">
+                <h3 class="lecturer-name">Dr. Newton Masinde</h3>
+                <p class="lecturer-title">Senior Lecturer</p>
+                <div class="lecturer-info text-left mt-4">
+                    <p>Coordinator, Enterprise Resource Planning (ERP) - Directorate of ICT - Department of ICT</p>
+                    <p><b>PhD in Computer Science EQF level 8, Heinrich Heine Universität (Germany)</b></p>
+                    <p><b>MTech. in Computer Science and Engineering EQF level 7, University College of Engineering, Osmania University (India)</b></p>
+                    <p><b>BSc. in Electronic and Computer Engineering EQF level 6</b></p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer id="footer-copyright">
-        <div class="container text-center">
-            <p>© 2024 JOOUST. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <p><i class="far fa-copyright"></i> 2025 JOOUST. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>
